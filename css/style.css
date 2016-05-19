@@ -237,8 +237,10 @@ span {
   margin-top: 10px;
 }
 
-.line {
-  margin-top: 20px;
-  border-bottom: 2px solid;
-  color: #999;
+hr {
+  margin-top: 15px;
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
