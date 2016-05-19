@@ -115,14 +115,28 @@ var projects = {
 			'description': 'A website which summarizes what I learned in Stage4 in Intro to Programming Nanodegree, Udacity: ' +
 				'creating a website in Python using Google App Engine and storing data in Google app store ' +
 				'so that users can leave their comments and post them on the website.' ,
-			'images': ['images/ipndstage4websiteproject.jpg', 'images/ipndstage4websitefeedback.jpg']
+			'images': [
+				{
+					'url': 'images/ipndstage4websiteproject.jpg',
+					'modal': 'top-page'
+				},
+				{
+					'url': 'images/ipndstage4websitefeedback.jpg',
+					'modal': 'comment-page'
+				}
+			]
 		},
 		{
 			'title': 'Kids Movie Collection',
 			'dates': 'October, 2015 - November, 2015',
 			'description': 'A Website of English and Japanese movie collections which shows trailers. ' +
 				'This website html is automatically created in Python.',
-			'images': ['images/kidsmoviecollectionswebsite.jpg']
+			'images': [
+				{
+					'url':'images/kidsmoviecollectionswebsite.jpg',
+					'modal': 'kidsmovie'
+				}
+			]
 		}
 	]
 };
@@ -140,7 +154,7 @@ projects.display = function() {
 
 		for (var i= 0; i < project.images.length; i++) {
 			var image = project.images[i];
-			var formattedProjectImage = HTMLprojectImage.replace('%data%', image);
+			var formattedProjectImage = HTMLprojectImage.replace('%data%', image.url).replace('%modal-data%', image.modal);
 			$('.project-entry:last').append(formattedProjectImage);
 		}
 	}
