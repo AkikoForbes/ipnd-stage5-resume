@@ -242,3 +242,8 @@ span {
   border-bottom: 2px solid;
   color: #999;
 }
+
+.image-responsive {
+  width: 100%;
+  height: 100%;
+}

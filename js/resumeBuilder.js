@@ -112,21 +112,23 @@ var projects = {
 		{
 			'title': 'IPND Stage4 Lesson Summary Website',
 			'dates': 'November, 2015 - March, 2016',
-			'description': 'A website which summarizes what I learned in Stage4 in Intro to Programming Nanodegree, Udacity',
+			'description': 'A website of what I learned in Stage4 in Intro to Programming Nanodegree, Udacity',
 			'images': [
 				{
-					'url': 'images/ipndstage4websiteproject.jpg',
-					'modalname': 'top-page',
-					'modallabel': 'topPage',
-					'modaltitle': 'Website Top Page',
-					'modaldescription': 'Dinamically created a website in Python using Google App Engine and hosted the website on Google app store.'
+					'url': 'images/ipndstage4website.jpg',
+					'modalname': 'units',
+					'modallabel': 'unitPage',
+					'modaltitle': 'Unit Summary Page',
+					'modaldescription': 'A website dinamically created in Python using Jinja Templates. Deployed by Google App Engine' +
+						' and hosted on Google app store: <a href="http://stage4notes-1242.appspot.com/" target="_blank">Visit this website</a>'
 				},
 				{
 					'url': 'images/ipndstage4websitefeedback.jpg',
 					'modalname': 'comment-page',
 					'modallabel': 'commentPage',
 					'modaltitle': 'Comment Page',
-					'modaldescription': 'Users can leave their comments and post them on the website. It also validates the comments on a server side using Python code.'
+					'modaldescription': 'Users can leave their comments on a comment form with or without logged in and post them on the website.' +
+						' It also validates the comments on a server side using Python code.'
 				}
 			]
 		},
@@ -172,8 +174,8 @@ projects.display = function() {
 			var formattedProjectImageModalPic = HTMLprojectImageModalPic.replace('%data%', image.url);
 			var formattedProjectImageModalDescription = HTMLprojectImageModalDescription.replace('%data%', image.modaldescription);
 			$(formattedModalId).append(HTMLprojectImageModalDialog + HTMLprojectImageModalContent + HTMLprojectImageModalHeader +
-				formattedProjectImageModalTitle + HTMLprojectImageModalBody +
-				formattedProjectImageModalPic + formattedProjectImageModalDescription + HTMLprojectImageModalCloseTags);
+				formattedProjectImageModalTitle + HTMLprojectImageModalBody + formattedProjectImageModalPic +
+				formattedProjectImageModalDescription + HTMLprojectImageModalCloseButton + HTMLprojectImageModalCloseTags);
 		}
 	}
 	$()
