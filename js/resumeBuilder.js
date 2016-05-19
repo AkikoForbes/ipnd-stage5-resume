@@ -22,7 +22,7 @@ var bio = {
 	'welcomeMessage' : 'Welcome to my resume & portfolio! I\'m currently learning programming and intending to become a web developper.' +
 		' If you have any questions or comments, please feel free to contact me anytime!',
 	'skills' : skills,
-	'bioPic' : 'images/akikoprofilepic.jpg',
+	'biopic' : 'images/akikoprofilepic.jpg',
 	'display': function() {
 		var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
 		var formattedName = HTMLheaderName.replace('%data%', bio.name);
@@ -38,7 +38,7 @@ var bio = {
 		$(formattedTwitter).prependTo('#topContacts, #footerContacts');
 		$(formattedEmail).prependTo('#topContacts, #footerContacts');
 
-		var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
+		var formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
 		$('#header').append(formattedBioPic);
 
 		var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
@@ -174,7 +174,7 @@ var education = {
 		{
 			'title': 'Intro to Programming Nanodegree',
 			'school': 'Udacity',
-			'dates': 'July, 2015 - current',
+			'date': 'July, 2015 - current',
 			'url': 'https://www.udacity.com/course/intro-to-programming-nanodegree--nd000'
 		}
 	],
