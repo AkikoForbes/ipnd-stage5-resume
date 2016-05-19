@@ -47,12 +47,12 @@ var HTMLprojectImageModal = '<div class="modal fade" id="%modal-name%" tabindex=
 var HTMLprojectImageModalDialog = '<div class="modal-dialog">';
 var HTMLprojectImageModalContent = '<div class="modal-content">';
 var HTMLprojectImageModalHeader = '<div class="modal-header">';
-var HTMLprojectImageModalTitle = '<h4 class="modal-title" id="%modal-label%">%data%</h4></div>'
-var HTMLprojectImageModalBody = '<div class="modal-body">'
-var HTMLprojectImageModalPic = '<img class="image-responsive" src="%data%">'
+var HTMLprojectImageModalTitle = '<h4 class="modal-title" id="%modal-label%">%data%</h4></div>';
+var HTMLprojectImageModalBody = '<div class="modal-body">';
+var HTMLprojectImageModalPic = '<img class="image-responsive" src="%data%">';
 var HTMLprojectImageModalDescription = '<p>%data%</p></div>';
-var HTMLprojectImageModalCloseButton = '<div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div>'
-var HTMLprojectImageModalCloseTags = '</div></div></div>'
+var HTMLprojectImageModalCloseButton = '<div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div>';
+var HTMLprojectImageModalCloseTags = '</div></div></div>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
