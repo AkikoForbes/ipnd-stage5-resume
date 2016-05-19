@@ -112,17 +112,38 @@ var projects = {
 		{
 			'title': 'IPND Stage4 Lesson Summary Website',
 			'dates': 'November, 2015 - March, 2016',
-			'description': 'A website which summarizes what I learned in Stage4 in Intro to Programming Nanodegree, Udacity: ' +
-				'creating a website in Python using Google App Engine and storing data in Google app store ' +
-				'so that users can leave their comments and post them on the website.' ,
-			'images': ['images/ipndstage4websiteproject.jpg', 'images/ipndstage4websitefeedback.jpg']
+			'description': 'A website which summarizes what I learned in Stage4 in Intro to Programming Nanodegree, Udacity',
+			'images': [
+				{
+					'url': 'images/ipndstage4websiteproject.jpg',
+					'modalname': 'top-page',
+					'modallabel': 'topPage',
+					'modaltitle': 'Website Top Page',
+					'modaldescription': 'Dinamically created a website in Python using Google App Engine and hosted the website on Google app store.'
+				},
+				{
+					'url': 'images/ipndstage4websitefeedback.jpg',
+					'modalname': 'comment-page',
+					'modallabel': 'commentPage',
+					'modaltitle': 'Comment Page',
+					'modaldescription': 'Users can leave their comments and post them on the website. It also validates the comments on a server side using Python code.'
+				}
+			]
 		},
 		{
 			'title': 'Kids Movie Collection',
 			'dates': 'October, 2015 - November, 2015',
-			'description': 'A Website of English and Japanese movie collections which shows trailers. ' +
-				'This website html is automatically created in Python.',
-			'images': ['images/kidsmoviecollectionswebsite.jpg']
+			'description': 'A Website of English and Japanese movie collections',
+			'images': [
+				{
+					'url':'images/kidsmoviecollectionswebsite.jpg',
+					'modalname': 'kidsmovie',
+					'modallabel': 'myKidsMovie',
+					'modaltitle': 'Kids Movie Collections',
+					'modaldescription': ' A Website of English and Japanese kids movie collections. When a image is clicked, its trailer shows up. ' +
+						'This website html is automatically created in Python.'
+				}
+			]
 		}
 	]
 };
@@ -140,10 +161,22 @@ projects.display = function() {
 
 		for (var i= 0; i < project.images.length; i++) {
 			var image = project.images[i];
-			var formattedProjectImage = HTMLprojectImage.replace('%data%', image);
+			var formattedProjectImage = HTMLprojectImage.replace('%data%', image.url).replace('%modal-name%', '#' + image.modalname);
 			$('.project-entry:last').append(formattedProjectImage);
+
+			var formattedProjectImageModal = HTMLprojectImageModal.replace('%modal-name%', image.modalname).replace('%modal-label%', image.modallabel);
+			$('.project-entry:last').append(formattedProjectImageModal);
+
+			var formattedModalId = "#" + image.modalname;
+			var formattedProjectImageModalTitle = HTMLprojectImageModalTitle.replace('%data%', image.modaltitle).replace('%modal-label%', image.modallabel);
+			var formattedProjectImageModalPic = HTMLprojectImageModalPic.replace('%data%', image.url);
+			var formattedProjectImageModalDescription = HTMLprojectImageModalDescription.replace('%data%', image.modaldescription);
+			$(formattedModalId).append(HTMLprojectImageModalDialog + HTMLprojectImageModalContent + HTMLprojectImageModalHeader +
+				formattedProjectImageModalTitle + HTMLprojectImageModalBody +
+				formattedProjectImageModalPic + formattedProjectImageModalDescription + HTMLprojectImageModalCloseTags);
 		}
 	}
+	$()
 }
 
 
