@@ -118,11 +118,17 @@ var projects = {
 			'images': [
 				{
 					'url': 'images/ipndstage4websiteproject.jpg',
-					'modal': 'top-page'
+					'modalname': 'top-page',
+					'modallabel': 'topPage',
+					'modaltitle': 'Website Top Page',
+					'modaldescription': 'test1'
 				},
 				{
 					'url': 'images/ipndstage4websitefeedback.jpg',
-					'modal': 'comment-page'
+					'modalname': 'comment-page',
+					'modallabel': 'commentPage',
+					'modaltitle': 'Comment Page',
+					'modaldescription': 'test2'
 				}
 			]
 		},
@@ -134,7 +140,10 @@ var projects = {
 			'images': [
 				{
 					'url':'images/kidsmoviecollectionswebsite.jpg',
-					'modal': 'kidsmovie'
+					'modalname': 'kidsmovie',
+					'modallabel': 'myKidsMovie',
+					'modaltitle': 'Kids Movie Collections',
+					'modaldescription': 'test3'
 				}
 			]
 		}
@@ -154,10 +163,22 @@ projects.display = function() {
 
 		for (var i= 0; i < project.images.length; i++) {
 			var image = project.images[i];
-			var formattedProjectImage = HTMLprojectImage.replace('%data%', image.url).replace('%modal-data%', image.modal);
+			var formattedProjectImage = HTMLprojectImage.replace('%data%', image.url).replace('%modal-name%', '#' + image.modalname);
 			$('.project-entry:last').append(formattedProjectImage);
+
+			var formattedProjectImageModal = HTMLprojectImageModal.replace('%modal-name%', image.modalname).replace('%modal-label%', image.modallabel);
+			$('.project-entry:last').append(formattedProjectImageModal);
+
+			var formattedModalId = "#" + image.modalname;
+			var formattedProjectImageModalTitle = HTMLprojectImageModalTitle.replace('%data%', image.modaltitle).replace('%modal-label%', image.modallabel);
+			var formattedProjectImageModalPic = HTMLprojectImageModalPic.replace('%data%', image.url);
+			var formattedProjectImageModalDescription = HTMLprojectImageModalDescription.replace('%data%', image.modaldescription);
+			$(formattedModalId).append(HTMLprojectImageModalDialog + HTMLprojectImageModalContent + HTMLprojectImageModalHeader +
+				formattedProjectImageModalTitle + HTMLprojectImageModalBody +
+				formattedProjectImageModalPic + formattedProjectImageModalDescription + HTMLprojectImageModalCloseTags);
 		}
 	}
+	$()
 }
 
 
@@ -229,7 +250,7 @@ education.display = function() {
 
 		var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', onlineCourse.title);
 		var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', onlineCourse.school);
-		var formattedOnlineDates = HTMLonlineDates.replace('%data%', onlineCourse.dates);
+		var formattedOnlineDates = HTMLonlineDates.replace('%data%', onlineCourse.date);
 		var formattedOnlineURL = HTMLonlineURL.replace('%data%', onlineCourse.url);
 
 		$('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL);
